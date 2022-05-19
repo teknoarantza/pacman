@@ -26,12 +26,14 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (pacman.isTouching(janaria)) {
+        soundExpression.spring.play()
         game.addScore(1)
         janaria.delete()
         mamua = game.createSprite(randint(0, 4), randint(0, 4))
         janaria.set(LedSpriteProperty.Brightness, 10)
     }
     if (pacman.isTouching(mamua)) {
+        soundExpression.giggle.play()
         game.gameOver()
     }
 })
